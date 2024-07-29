@@ -1,0 +1,154 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+
+
+
+
+.hovert {
+  cursor: pointer;
+  transition: 0.3s all;
+  &:hover {
+    opacity: 0.75;
+  }
+  padding-top: 3px;
+}
+
+.hover {
+  position: relative;
+  cursor: pointer;
+  transition: 0.3s all;
+  &:hover {
+    opacity: 0.75;
+  }
+  padding-top: 3px;
+}
+
+.hover:after {
+  content: "";
+  background: white;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 2px;
+  width: 20px;
+}
+
+.lang-hover {
+  transition: 0.3s all;
+  cursor: pointer;
+  &:hover {
+    color: #000;
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.slider-num {
+  position: relative;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.slider-num::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: white;
+}
+
+.slider-num.active::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #22b3c1;
+  transition: all 1s ease;
+  animation: navigation 5s 1;
+}
+
+@keyframes navigation {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+.img-container {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%;
+  overflow: hidden;
+  border-radius: 1.5rem 0 0 1.5rem;
+}
+
+.image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 1.5rem 0 0 1.5rem;
+}
+
+.book {
+  position: relative;
+  display: inline-block;
+}
+
+.book::after {
+  content: "";
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #ffffff71;
+  width: 100px;
+  height: 2px;
+}
+
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
